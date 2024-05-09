@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(238, 238, 238);
+  font-family: sans-serif;
+  height: 100vh;
+  width: 100vw;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section_side_bar {
+  background-color: black;
+  width: 20%;
+  height: 100vh;
+  margin-bottom: 50px;
+  color: #fff !important;
+  border-right: 1px solid red;
+}
+.section_side_bar > .side_bar_header_title {
+  padding: 20px 0 0 20px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+.section_side_bar > .side_bar_header_title .lines {
+  width: 40px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  gap: 6px;
+}
+.section_side_bar > .side_bar_header_title .lines .line {
+  width: 33.3333333333%;
+  height: 100%;
+  background-color: rgb(238, 238, 238);
+  background-color: red;
+  border-radius: 4px;
+}
+.section_side_bar .side_bar_content > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  padding: 20px 0 0 20px !important;
+  color: #fff;
+}
+.section_side_bar .side_bar_content .boards_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  color: #fff;
+  margin-top: 30px;
+}
+.section_side_bar .side_bar_content .boards_list .board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  padding: 4px 0px;
+  padding-left: 20px;
+  width: 90%;
+  border-radius: 0 20px 20px 0;
+  font-size: 18px;
+  background-color: rgb(255, 0, 0);
+  cursor: pointer;
+}
+.section_side_bar .side_bar_content .boards_list .create_board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  padding: 4px 0px;
+  padding-left: 20px;
+  width: 90%;
+  border-radius: 0 20px 20px 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.bage_content {
+  width: 80%;
+}
+.bage_content > .nav_control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+  padding: 20px !important;
+  color: #fff;
+  background-color: rgb(44, 43, 55);
+  border-bottom: 1px solid red;
+}
+.bage_content > .nav_control .add_task {
+  background-color: red;
+  color: #fff;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 16px;
+  font-size: 22px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}

@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="./css/master.css")
+    link(rel="stylesheet" href="./css/all.min.css")
+    title 'Kanban;
+  body
+    div(class="section_side_bar")
+      div(class="side_bar_header_title")
+        div(class="lines")
+          div(class="line")
+          div(class="line")
+          div(class="line")
+        h1(class="title") Kanban
+      div(class="side_bar_content")
+        span all boards <span class="boards_lenght">" 2 "</span>
+        div(class="boards_list")
+          div(class="board")
+            i(class="fa-solid fa-table-columns")
+            span Platform Launch
+          div(class="board")
+            i(class="fa-solid fa-table-columns")
+            span Marketing Plan
+          div(class="board")
+            i(class="fa-solid fa-table-columns")
+            span Roadmap
+          div(class="board")
+            i(class="fa-solid fa-table-columns")
+            span +create new board
+    div(class="bage_content")
+      div(class="nav_control")
+        h2 Plantform Lanuch
+        button(class="add_task") + Add New Task
+  script(src="./src/js/index.js")
+  script(src="./src/js/all.min.js")
