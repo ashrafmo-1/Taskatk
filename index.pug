@@ -5,15 +5,12 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet" href="./css/master.css")
     link(rel="stylesheet" href="./css/all.min.css")
-    title 'Kanban;
+    title Taskatk;
   body
     div(class="section_side_bar")
       div(class="side_bar_header_title")
-        div(class="lines")
-          div(class="line")
-          div(class="line")
-          div(class="line")
-        h1(class="title") Kanban
+        //- <i class="fa-solid fa-list to_do_brand"></i>
+        h1(class="title") Taskatk
       div(class="side_bar_content")
         span all boards <span class="boards_lenght">" 2 "</span>
         div(class="boards_list")
@@ -33,5 +30,18 @@ html(lang="en")
       div(class="nav_control")
         h2 Plantform Lanuch
         button(class="add_task") + Add New Task
+
+      div(class="sections")
+        div(class="to_do_section")
+          div(class="to_do_box")
+            h4(class="title") to dos
+            ul(class="to_do_list")
+          div(class="to_do_box")
+            h4(class="title") Doing
+            ul(class="to_do_list")
+              li(class="to_do")
+                h4(class="title") build ui for onboard
+                p(class="desc") hello world ui programming.
   script(src="./src/js/index.js")
   script(src="./src/js/all.min.js")
+  script(src="https://cdn.jsdelivr.net/npm/sweetalert2@11")

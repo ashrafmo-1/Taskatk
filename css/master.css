@@ -5,8 +5,26 @@
           box-sizing: border-box;
 }
 
+ul li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(101, 92, 193);
+}
+
 body {
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(44, 43, 55);
   font-family: sans-serif;
   height: 100vh;
   width: 100vw;
@@ -14,6 +32,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow-x: hidden;
 }
 
 .section_side_bar {
@@ -23,31 +42,20 @@ body {
   margin-bottom: 50px;
   color: #fff !important;
   border-right: 1px solid red;
+  position: fixed;
 }
 .section_side_bar > .side_bar_header_title {
   padding: 20px 0 0 20px !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 10px;
 }
-.section_side_bar > .side_bar_header_title .lines {
-  width: 40px;
-  height: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
-  gap: 6px;
-}
-.section_side_bar > .side_bar_header_title .lines .line {
-  width: 33.3333333333%;
-  height: 100%;
-  background-color: rgb(238, 238, 238);
-  background-color: red;
-  border-radius: 4px;
+.section_side_bar > .side_bar_header_title .to_do_brand {
+  font-size: 30px;
 }
 .section_side_bar .side_bar_content > span {
   display: -webkit-box;
@@ -97,6 +105,8 @@ body {
 
 .bage_content {
   width: 80%;
+  margin-left: 20%;
+  height: 100vh;
 }
 .bage_content > .nav_control {
   display: -webkit-box;
@@ -122,3 +132,210 @@ body {
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
+.bage_content .sections {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  color: #fff;
+  width: 100%;
+  padding: 20px;
+}
+.bage_content .sections .to_do_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  padding: 4px 0px;
+  font-size: 18px;
+}
+.bage_content .sections .to_do_section .to_do_box {
+  width: 300px;
+}
+.bage_content .sections .to_do_section .to_do_box > .title {
+  font-size: 22px;
+  margin-bottom: 10px;
+  text-align: start;
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 30px;
+}
+.bage_content .sections .to_do_section .to_do_box > .title::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  left: 0;
+  border-radius: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.bage_content .sections .to_do_section .to_do_list {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.bage_content .sections .to_do_section .to_do_list .to_do {
+  background-color: rgba(0, 0, 0, 0.192);
+  border-radius: 6px;
+  padding: 25px 10px 10px !important;
+  position: relative;
+  cursor: pointer;
+}
+.bage_content .sections .to_do_section .to_do_list .to_do > .title {
+  font-size: 22px;
+  padding-bottom: 10px;
+  text-align: start;
+}
+.bage_content .sections .to_do_section .to_do_list .to_do .desc {
+  font-size: 16px;
+  color: #777;
+}
+.bage_content .sections .to_do_section .to_do_list .to_do .colors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+.bage_content .sections .to_do_section .to_do_list .to_do .colors .red,
+.bage_content .sections .to_do_section .to_do_list .to_do .colors .blue,
+.bage_content .sections .to_do_section .to_do_list .to_do .colors .black,
+.bage_content .sections .to_do_section .to_do_list .to_do .colors .orange,
+.bage_content .sections .to_do_section .to_do_list .to_do .colors .gold,
+.bage_content .sections .to_do_section .to_do_list .to_do .colors .green {
+  width: 16.6666666667%;
+  font-size: 16px;
+}
+.bage_content .sections .to_do_section .to_do_list .to_do .colors .red {
+  background-color: red;
+}
+.bage_content .sections .to_do_section .to_do_list .to_do .colors .blue {
+  background-color: blue;
+}
+.bage_content .sections .to_do_section .to_do_list .to_do .colors .black {
+  background-color: black;
+}
+.bage_content .sections .to_do_section .to_do_list .to_do .colors .orange {
+  background-color: orange;
+}
+.bage_content .sections .to_do_section .to_do_list .to_do .colors .gold {
+  background-color: gold;
+}
+.bage_content .sections .to_do_section .to_do_list .to_do .colors .green {
+  background-color: green;
+}
+
+.task-controller {
+  width: 500px;
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 1px solid #ffffff;
+  padding: 20px !important;
+  background-color: rgb(44, 43, 55);
+  -webkit-box-shadow: 0 4px 6px rgba(155, 155, 155, 0.1);
+          box-shadow: 0 4px 6px rgba(155, 155, 155, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  text-transform: capitalize;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.task-controller .task_controller_title {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  text-align: start;
+  width: 100%;
+}
+.task-controller .form_controller {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  color: #fff;
+  background-color: rgb(44, 43, 55);
+  width: 100%;
+}
+.task-controller .form_controller > .tasktitle, .task-controller .form_controller .task_discription {
+  font-size: 18px;
+  text-align: start;
+  margin-top: 10px;
+}
+.task-controller .form_controller .input_title,
+.task-controller .form_controller .input_discription {
+  background-color: transparent;
+  border: 1px solid #777;
+  height: 40px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  outline: none;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  width: 100%;
+}
+.task-controller .form_controller .input_discription {
+  height: 120px;
+}
+.task-controller .form_controller .create_task {
+  background-color: red;
+  color: #fff;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 16px;
+  font-size: 22px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  resize: none;
+}
+.task-controller .close-button {
+  padding: 8px 16px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
+/*# sourceMappingURL=master.css.map */

@@ -1,24 +1,43 @@
+$main_bg: rgb(44, 43, 55);
+$line_color: rgb(101, 92, 193);
+$text_color: rgb(255, 255, 255);
+// lines
+$line_One: rgb(101, 93, 198);
+$line_Two: rgb(85, 78, 159);
+$line_Three: rgb(71, 66, 128);
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-// variables
-$main_bg: rgb(44, 43, 55);
-$line_color: rgb(101, 92, 193);
+ul li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
-$line_One: rgb(101, 93, 198);
-$line_Two: rgb(85, 78, 159);
-$line_Three: rgb(71, 66, 128);
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $line_color;
+}
 
 body {
-  background-color: rgb(238, 238, 238);
+  background-color: $main_bg;
   font-family: sans-serif;
   height: 100vh;
   width: 100vw;
   min-height: 100vh;
   display: flex;
+  overflow-x: hidden;
 }
 .section_side_bar {
   background-color: black;
@@ -27,23 +46,14 @@ body {
   margin-bottom: 50px;
   color: #fff !important;
   border-right: 1px solid red;
+  position: fixed;
   > .side_bar_header_title {
     padding: 20px 0 0 20px !important;
     display: flex;
+    align-items: center;
     gap: 10px;
-    .lines {
-      width: 40px;
-      height: 30px;
-      display: flex;
-      align-self: start;
-      gap: 6px;
-      .line {
-        width: calc(100% / 3);
-        height: 100%;
-        background-color: rgb(238, 238, 238);
-        background-color: red;
-        border-radius: 4px;
-      }
+    .to_do_brand {
+      font-size: 30px;
     }
   }
   & .side_bar_content {
@@ -85,6 +95,8 @@ body {
 }
 .bage_content {
   width: 80%;
+  margin-left: 20%;
+  height: 100vh;
   > .nav_control {
     display: flex;
     justify-content: space-between;
@@ -93,7 +105,6 @@ body {
     color: #fff;
     background-color: $main_bg;
     border-bottom: 1px solid red;
-
 
     & .add_task {
       background-color: red;
@@ -105,5 +116,182 @@ body {
       cursor: pointer;
       transition: background-color 0.3s;
     }
+  }
+  .sections {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+    width: 100%;
+    padding: 20px;
+    .to_do_section {
+      display: flex;
+      gap: 20px;
+      padding: 4px 0px;
+      font-size: 18px;
+      .to_do_box {
+        width: 300px;
+        > .title {
+          font-size: 22px;
+          margin-bottom: 10px;
+          text-align: start;
+          text-transform: uppercase;
+          position: relative;
+          padding-left: 30px;
+          &::after {
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            left: 0;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+      .to_do_list {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        .to_do {
+          background-color: rgba(0, 0, 0, 0.192);
+          border-radius: 6px;
+          padding: 25px 10px 10px !important;
+          position: relative;
+          cursor: pointer;
+          > .title {
+            font-size: 22px;
+            padding-bottom: 10px;
+            text-align: start;
+          }
+          & .desc {
+            font-size: 16px;
+            color: #777;
+          }
+          .colors {
+            display: flex;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            // border-radius: 10px 10px 0 0;
+            .red,
+            .blue,
+            .black,
+            .orange,
+            .gold,
+            .green {
+              width: calc(100% / 6);
+              font-size: 16px;
+            }
+            .red {
+              background-color: red;
+            }
+            .blue {
+              background-color: blue;
+            }
+            .black {
+              background-color: black;
+            }
+            .orange {
+              background-color: orange;
+            }
+            .gold {
+              background-color: gold;
+            }
+            .green {
+              background-color: green;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.task-controller {
+  width: 500px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ffffff;
+  padding: 20px !important;
+  background-color: $main_bg;
+  box-shadow: 0 4px 6px rgba(155, 155, 155, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  text-transform: capitalize;
+  user-select: none;
+
+  .task_controller_title {
+    font-size: 24px;
+    font-weight: bold;
+    color: $text_color;
+    margin-bottom: 20px;
+    text-align: start;
+    width: 100%;
+  }
+  .form_controller {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+    background-color: $main_bg;
+    width: 100%;
+    > .tasktitle,
+    & .task_discription {
+      font-size: 18px;
+      text-align: start;
+      margin-top: 10px;
+    }
+
+    & .input_title,
+    .input_discription {
+      background-color: transparent;
+      border: 1px solid #777;
+      height: 40px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      outline: none;
+      color: $text_color;
+      font-size: 16px;
+      width: 100%;
+    }
+    & .input_discription {
+      height: 120px;
+    }
+    & .create_task {
+      background-color: red;
+      color: #fff;
+      padding: 4px 12px;
+      border: none;
+      border-radius: 16px;
+      font-size: 22px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      resize: none;
+    }
+  }
+  & .close-button {
+    padding: 8px 16px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
   }
 }
